@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&family=Lexend:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  --bg: 248 250 252;
+  --surface: 255 255 255;
+  --surface-strong: 241 245 249;
+  --text: 15 23 42;
+  --muted: 71 85 105;
+  --border: 226 232 240;
+  --primary: 17 24 39;
+  --primary-soft: 31 41 55;
+  --accent: 180 83 9;
+  --ring: 37 99 235;
+  --radius-card: 1.25rem;
+}
+
+html[data-contrast='high'] {
+  color-scheme: dark;
+  --bg: 3 7 18;
+  --surface: 15 23 42;
+  --surface-strong: 30 41 59;
+  --text: 248 250 252;
+  --muted: 203 213 225;
+  --border: 71 85 105;
+  --primary: 255 255 255;
+  --primary-soft: 226 232 240;
+  --accent: 251 191 36;
+  --ring: 251 191 36;
+}
+
+html[data-text-scale='small'] {
+  font-size: 93.75%;
+}
+
+html[data-text-scale='large'] {
+  font-size: 112.5%;
+}
+
+html[data-dyslexic='true'] body {
+  font-family: 'Lexend', sans-serif;
+}
+
+html[data-reduce-motion='true'] {
+  scroll-behavior: auto;
+}
+
+html[data-reduce-motion='true'] *,
+html[data-reduce-motion='true'] *::before,
+html[data-reduce-motion='true'] *::after {
+  animation-duration: 0.001ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.001ms !important;
+  scroll-behavior: auto !important;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: rgb(var(--bg));
+  color: rgb(var(--text));
+  font-family: 'Manrope', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+::selection {
+  background: rgb(var(--primary));
+  color: white;
+}
+
+:focus-visible {
+  outline: 3px solid rgb(var(--ring));
+  outline-offset: 3px;
+}
+
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -4rem;
+  z-index: 60;
+  border-radius: 9999px;
+  background: rgb(var(--primary));
+  color: white;
+  padding: 0.75rem 1rem;
+  font-weight: 700;
+  transition: top 180ms ease;
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
+.toolbar-shell {
+  transition: transform 240ms ease, opacity 240ms ease, max-height 240ms ease, padding 240ms ease;
+}
+
+.toolbar-hidden {
+  transform: translateY(-120%);
+  opacity: 0;
+  pointer-events: none;
+  max-height: 0;
+  overflow: hidden;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.glass-panel {
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(18px);
+}
+
+html[data-contrast='high'] .glass-panel {
+  background: rgb(var(--surface));
+}
+
+.section-kicker {
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+}
+
+.grid-pattern {
+  background-image: linear-gradient(rgb(148 163 184 / 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(148 163 184 / 0.08) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+.card-shadow {
+  box-shadow: 0 18px 44px rgba(15, 23, 42, 0.08);
+}
+
+.modal-backdrop {
+  background: rgba(2, 6, 23, 0.64);
+}
+
+.carousel-scrollbar::-webkit-scrollbar {
+  height: 10px;
+}
+
+.carousel-scrollbar::-webkit-scrollbar-thumb {
+  background: rgb(148 163 184 / 0.6);
+  border-radius: 9999px;
+}
