@@ -51,7 +51,6 @@ export default function ContactPage() {
 
           <section className="rounded-3xl border border-slate-200 bg-white p-8 shadow-soft">
             <h2 className="text-3xl font-bold text-primary">Request a quote</h2>
-            <p className="mt-3 text-slate-600">This form starts blank and does not prefill product data.</p>
 
             {submitted ? (
               <div className="mt-8 rounded-3xl border border-emerald-200 bg-emerald-50 p-6 text-emerald-900">
